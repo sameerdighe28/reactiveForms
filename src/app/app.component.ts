@@ -65,7 +65,8 @@ export class AppComponent {
 
 
   submitForm(event) {
-    this.data = event;
+    console.log(event)
+    this.data = event.data;
   }
 
 }

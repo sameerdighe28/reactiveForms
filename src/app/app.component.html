@@ -1,5 +1,5 @@
 <div>
-  <h1>This is datatable example</h1>
+  <h1>This is Data-table example</h1>
   <app-datatable
   [rows]="rows"
   [columns]="columns"
@@ -9,6 +9,6 @@
 
 <div>
   <h3>Datatable data</h3>
-  <span>{{data}}</span>
+  <span>{{data | json}}</span>
 </div>
 <router-outlet></router-outlet>
