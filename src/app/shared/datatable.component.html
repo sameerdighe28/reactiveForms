@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" novalidate [formGroup]="form">
+  <div class="data-table-header" >
+    <div class="row">
+      <ng-container *ngFor="let col of columns">
+	            <span class="data-table-title">
+	                {{col.name}}
+	            </span>
+      </ng-container>
+    </div>
+  </div>
+  <!--DataTable Body-->
+  <div formArrayName="changeImageOptions">
+    <div *ngFor="let row of rowsArray.controls; let ridx = index">
+      <div class="data-table-row" [formGroupName]="ridx">
+        <div class="row">
+          <ng-container *ngFor="let col of columns; let cidx = index">
+              <span *ngIf="col.type === 'string'" class="data-table-data-cell">
+                  <input [formControlName]="col.prop" type="text"  />
+                  <span class="errorMessage" color="warn"
+                      [hidden]="control(row,col.prop).valid || control(row,col.prop).pristine">
+                    *
+                  </span>
+              </span>
+          </ng-container>
+          <a href="JavaScript:void(0);" (click)="deleteClicked(ridx)">delete</a>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  <a href="JavaScript:void(0);" (click)="onAddAnotherRowClicked()">+ Add New Row</a>
+  <br><br><br>
+  <button [disabled]="!form.valid" color="primary" type="submit">Save</button>
+</form>

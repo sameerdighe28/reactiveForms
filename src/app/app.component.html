@@ -1,34 +1,14 @@
+<div>
+  <h1>This is datatable example</h1>
+  <app-datatable
+  [rows]="rows"
+  [columns]="columns"
+  (submitForm)="submitForm($event)">
+  </app-datatable>
+</div>
 
-<!--DataTable Header-->
-<form (ngSubmit)="onSubmit()" novalidate [formGroup]="form">
-	<div class="data-table-header">
-	    <div class="row">
-	        <ng-container *ngFor="let col of columns">
-	            <span class="data-table-title">
-	                {{col.name}}
-	            </span>
-	        </ng-container>
-	    </div>
-	</div>
-	<!--DataTable Body-->
-	<div formArrayName="rows">
-		<div *ngFor="let row of rowsFormControls.controls; let ridx = index">
-		    <div class="data-table-row" [formGroupName]="ridx">
-		        <div class="row">
-			            <ng-container *ngFor="let col of columns; let cidx = index">
-			                <span *ngIf="col.type === 'string'" class="data-table-data-cell">
-			                    <input [formControlName]="col.prop" type="text"  />
-			                </span>
-			            </ng-container>
-		            <a href="JavaScript:void(0);" (click)="deleteClicked(ridx)">delete</a>
-		        </div>
-		    </div>
-		</div>
-	</div>
-	<a href="JavaScript:void(0);" (click)="pushEmptyRow()">+ Add New Row</a>
-	<br><br><br>
-	<button color="primary" type="submit">Save</button>
-</form>
-
-
+<div>
+  <h3>Datatable data</h3>
+  <span>{{data}}</span>
+</div>
 <router-outlet></router-outlet>
