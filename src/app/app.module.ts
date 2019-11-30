@@ -4,11 +4,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DatatableComponent } from './shared/datatable.component';
+import { DataListComponent } from './data-list/data-list.component';
+import { DataListDirective } from './data-list.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatatableComponent
+    DatatableComponent,
+    DataListComponent,
+    DataListDirective
   ],
   imports: [
     BrowserModule,
