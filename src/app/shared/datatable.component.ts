@@ -9,9 +9,9 @@ import {AppService} from '../app.service';
 })
 export class DatatableComponent implements OnInit {
 
-  private questions;
+  public questions;
   form: FormGroup;
-  private prop: string;
+  public prop: string;
 
   @Input() rows: any[];
   @Input() columns: any[];

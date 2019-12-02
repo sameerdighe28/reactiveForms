@@ -8,9 +8,9 @@ import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private rows;
-  private columns;
-  private data;
+  public rows;
+  public columns;
+  public data;
 
   constructor() {
     this.rows =  [
